@@ -15,6 +15,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -26,7 +28,8 @@ public class Universidad {
     static Scanner scan = new Scanner(System.in);
     
     Interfaz interfaz;
-
+    JFrame field = new JFrame();
+    
     public void carga() throws CargarArchivoExcepcion {
         try {
 
@@ -58,7 +61,7 @@ public class Universidad {
                 listaAlumnos.add(alumno);
 
             }
-            
+            JOptionPane.showMessageDialog(field, "Carga Exitosa");
             
 
         } catch (FileNotFoundException e) {
@@ -68,7 +71,9 @@ public class Universidad {
         }
         
         throw new CargarArchivoExcepcion("Archivo vacio");
+        
     }
+    
     
     public void mostrarLista() {
         
