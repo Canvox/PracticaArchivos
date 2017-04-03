@@ -1,0 +1,6 @@
+0931221188,2018,Nicolas,Naranjo,0988686630,Guayaquil,92,FISTE,Sistemas,15
+
+0931221187,2016,Ronny,Sandoval,0988686630,Guayaquil,79,FISTE,Economia,15
+
+0931221189,2010,Eduardo,Lopez,0988686630,Guayaquil,81,FISTE,Turismo,15
+0931221183,2011,Estuardo,Egas,0988686630,Guayaquil,81,FISTE,Marketing,15
