@@ -7,11 +7,14 @@ package practicaarchivos2;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -61,9 +64,14 @@ public class Interfaz extends JFrame implements ActionListener {
         field = new JFrame();
         
         image = new ImageIcon("image.png");
-        label = new JLabel();
         
-        label.add(image);
+        label = new JLabel(image);
+        label.setPreferredSize(new Dimension(75, 75));
+        //Por alguna razon no sirve 
+        label.setBounds(200,200,100,100);
+        field.add(label);
+        
+        //frame.add(new JLabel(new ImageIcon("Path/To/Your/Image.png")));
 
         t1 = new JTextField(10);
         t1.setBorder(new CompoundBorder(BorderFactory.createTitledBorder("Cedula"), t1.getBorder()));
@@ -124,7 +132,7 @@ public class Interfaz extends JFrame implements ActionListener {
 
     }
 
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e){
 
         if (e.getActionCommand().equals("ADD")) {
             u = new Universidad();
@@ -154,8 +162,9 @@ public class Interfaz extends JFrame implements ActionListener {
            // u.clonar(listaAlumnos);
             u.listaAlumnos = (ArrayList)listaAlumnos.clone();
             JOptionPane.showMessageDialog(field, "Alumno Agregado");
-
+            
             field.setVisible(false);
+            
             System.out.println("---Lista con Alumno agregado de Interfaz---");
             for (int i = 0; i < listaAlumnos.size(); i++) {
                 System.out.println(listaAlumnos.get(i));
